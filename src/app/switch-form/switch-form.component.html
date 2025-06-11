@@ -1,0 +1,26 @@
+<form [formGroup]="switchForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="customerType">個人／法人</label>
+    <input type="radio" formControlName="customerType" value="individual" />
+    <input type="radio" formControlName="customerType" value="corporate" />
+  </div>
+  <div *ngIf="dynamicDisplayForms().includes('name')">
+    <label for="name">お名前</label>
+    <input type="text" formControlName="name" />
+  </div>
+  <div *ngIf="dynamicDisplayForms().includes('nameKana')">
+    <label for="nameKana">お名前カナ</label>
+    <input type="text" formControlName="nameKana" />
+  </div>
+  <div *ngIf="dynamicDisplayForms().includes('companyName')">
+    <label for="companyName">法人名</label>
+    <input type="text" formControlName="companyName" />
+  </div>
+  <div *ngIf="dynamicDisplayForms().includes('companyNameKana')">
+    <label for="companyNameKana">法人名カナ</label>
+    <input type="text" formControlName="companyNameKana" />
+  </div>
+  <div>
+    <button type="submit" [disabled]="!switchForm.valid">Submit</button>
+  </div>
+</form>

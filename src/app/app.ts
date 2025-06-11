@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { SwitchFormComponent } from './switch-form/switch-form.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [SwitchFormComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
